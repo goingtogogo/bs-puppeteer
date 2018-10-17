@@ -25,12 +25,6 @@ external makeTagOptions:
   "";
 
 [@bs.send]
-external goto:
-  (t, string, ~options: Navigation.options=?, unit) =>
-  Js.Promise.t(Js.null(Response.t)) =
-  "";
-
-[@bs.send]
 external selectOne:
   (t, ~selector: string) => Js.Promise.t(Js.Null.t(ElementHandle.t('a))) =
   "$";
@@ -59,15 +53,6 @@ external makeSelectorOptions:
   "";
 
 /* TODO: waitForFunction */
-
-[@bs.send]
-external waitForNavigation:
-  (t, ~options: Navigation.options) => Js.Promise.t(Js.nullable(Response.t)) =
-  "";
-
-let waitForNavigation = (page, ~options) =>
-  waitForNavigation(page, ~options)
-  |> Js.Promise.(then_(response => response |> Js.toOption |> resolve));
 
 [@bs.send]
 external waitForSelector:

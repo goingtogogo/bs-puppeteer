@@ -22,8 +22,6 @@ external createIncognitoBrowserContext: t => Js.Promise.t(BrowserContext.t) =
 [@bs.send] [@bs.return nullable]
 external process: t => option(Node.Process.t) = "";
 
-[@bs.send] external target: t => Target.t = "";
-
 [@bs.send] external targets: t => array(Target.t) = "";
 
 [@bs.send] external userAgent: t => Js.Promise.t(string) = "";
